@@ -37,12 +37,27 @@ function App() {
     setCards(prev => [...prev,newCard])
   }
 
+  function updateCard(updatedCard) {
+  setCards((prevCards) =>
+    prevCards.map((card) =>
+      card.id === updatedCard.id ? updatedCard : card
+    )
+  );
+ }
+
+function deleteCard(id) {
+  setCards((prevCards) =>
+    prevCards.filter((card) => card.id !== id)
+  );
+}
+
   return (
     <>
      <h1>Kanban-board</h1>
      <Header />
-     <Board cards={cards} />
      <AddCardForm onAddCard={addCard} />
+     <Board cards={cards} updateCard={updateCard}
+     deleteCard={deleteCard}/>
     </>
   )
 }

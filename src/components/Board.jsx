@@ -1,6 +1,6 @@
 import Column from "./Column";
 
-function Board({ cards }) {
+function Board({ cards, updateCard, deleteCard }) {
 
   const columns = [
     {
@@ -29,6 +29,8 @@ function Board({ cards }) {
               (card) => card.column === column.id
             )
           }
+          updateCard={updateCard}
+          deleteCard={deleteCard}
         />
 
       ))}
