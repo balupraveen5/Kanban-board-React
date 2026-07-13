@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header';
 import Board from './components/Board';
 import AddCardForm from './AddCardForm';
+import { useTheme } from './context/ThemeContext';
 
 function App() {
   
@@ -79,17 +80,18 @@ function deleteCard(id) {
     })
   );
 }
+const { theme }= useTheme();
 
   return (
-    <>
+     <div className={theme}>
      <h1>Kanban-board</h1>
      <Header />
      <AddCardForm onAddCard={addCard} />
      <Board cards={cards} updateCard={updateCard}
      deleteCard={deleteCard}
      moveCard={moveCard}/>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
