@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-function Column({ title, cards,updateCard,deleteCard}) {
+function Column({ title, cards,updateCard,deleteCard,moveCard}) {
   return (
     <section>
       <h2>{title}</h2>
@@ -13,6 +13,7 @@ function Column({ title, cards,updateCard,deleteCard}) {
           card={card}
           updateCard={updateCard}
           deleteCard={deleteCard}
+          moveCard={moveCard}
         />
       ))}
     </section>

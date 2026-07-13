@@ -51,13 +51,43 @@ function deleteCard(id) {
   );
 }
 
+  function moveCard(id, direction) {
+  const columns = ["todo", "doing", "done"];
+
+  setCards((prevCards) =>
+    prevCards.map((card) => {
+      if (card.id !== id) {
+        return card;
+      }
+
+      const currentIndex = columns.indexOf(card.column);
+
+      let newIndex = currentIndex;
+
+      if (direction === "next" && currentIndex < columns.length - 1) {
+        newIndex = currentIndex + 1;
+      }
+
+      if (direction === "previous" && currentIndex > 0) {
+        newIndex = currentIndex - 1;
+      }
+
+      return {
+        ...card,
+        column: columns[newIndex],
+      };
+    })
+  );
+}
+
   return (
     <>
      <h1>Kanban-board</h1>
      <Header />
      <AddCardForm onAddCard={addCard} />
      <Board cards={cards} updateCard={updateCard}
-     deleteCard={deleteCard}/>
+     deleteCard={deleteCard}
+     moveCard={moveCard}/>
     </>
   )
 }

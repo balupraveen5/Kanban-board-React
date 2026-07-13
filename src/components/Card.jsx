@@ -4,6 +4,7 @@ function Card({
   card,
   updateCard,
   deleteCard,
+  moveCard,
 }) {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -85,6 +86,20 @@ function Card({
       >
         Delete
       </button>
+
+        {card.column !== "todo" && (
+    <button onClick={() => moveCard(card.id, "previous")}>
+      ⬅ Previous
+    </button>
+  )}
+
+  {card.column !== "done" && (
+    <button onClick={() => moveCard(card.id, "next")}>
+      Next ➡
+    </button>
+
+  )}
+
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Column from "./Column";
 
-function Board({ cards, updateCard, deleteCard }) {
+function Board({ cards, updateCard, deleteCard,moveCard }) {
 
   const columns = [
     {
@@ -31,6 +31,7 @@ function Board({ cards, updateCard, deleteCard }) {
           }
           updateCard={updateCard}
           deleteCard={deleteCard}
+          moveCard={moveCard}
         />
 
       ))}
