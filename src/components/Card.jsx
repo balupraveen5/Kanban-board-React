@@ -1,6 +1,9 @@
-export default function Card({title}){
+export default function Card({title,description}){
     return(
-       <h1>{title}</h1>
+        <>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        </>
     );
 
 }

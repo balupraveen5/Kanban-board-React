@@ -1,26 +1,37 @@
 import Column from "./Column";
 
-function Board() {
-  const todo = [
-    { id: 1, title: "Learn React" },
-    { id: 2, title: "Read Docs" },
-  ];
+function Board({ cards }) {
 
-  const doing = [
-    { id: 3, title: "Build Project" },
-  ];
-
-  const done = [
-    { id: 4, title: "Install Node" },
+  const columns = [
+    {
+      id: "todo",
+      title: "Todo",
+    },
+    {
+      id: "doing",
+      title: "Doing",
+    },
+    {
+      id: "done",
+      title: "Done",
+    },
   ];
 
   return (
     <>
-      <Column title="Todo" cards={todo} />
+      {columns.map((column) => (
 
-      <Column title="Doing" cards={doing} />
+        <Column
+          key={column.id}
+          title={column.title}
+          cards={
+            cards.filter(
+              (card) => card.column === column.id
+            )
+          }
+        />
 
-      <Column title="Done" cards={done} />
+      ))}
     </>
   );
 }

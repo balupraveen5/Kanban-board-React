@@ -9,6 +9,7 @@ function Column({ title, cards }) {
         <Card
           key={card.id}
           title={card.title}
+          description={card.description}
         />
       ))}
     </section>

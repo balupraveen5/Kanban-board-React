@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header';
 import Board from './components/Board';
+import AddCardForm from './AddCardForm';
 
 function App() {
   
@@ -32,11 +33,16 @@ function App() {
 
   ])
 
+  function addCard(newCard){
+    setCards(prev => [...prev,newCard])
+  }
+
   return (
     <>
      <h1>Kanban-board</h1>
      <Header />
      <Board cards={cards} />
+     <AddCardForm onAddCard={addCard} />
     </>
   )
 }
