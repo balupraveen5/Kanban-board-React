@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "./AddCardForm.module.css"
 function AddCardForm({ onAddCard }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -30,7 +30,7 @@ function AddCardForm({ onAddCard }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
 
       <h2>Add Card</h2>
 
@@ -40,6 +40,7 @@ function AddCardForm({ onAddCard }) {
         <label>Title</label>
         <br />
         <input
+          className={styles.input}
           type="text"
           value={title}
           onChange={(e) => {
@@ -55,6 +56,7 @@ function AddCardForm({ onAddCard }) {
         <label>Description</label>
         <br />
         <textarea
+          className={styles.textarea} 
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -66,6 +68,7 @@ function AddCardForm({ onAddCard }) {
         <label>Column</label>
         <br />
         <select
+          className={styles.select}
           value={column}
           onChange={(e) => setColumn(e.target.value)}
         >
@@ -77,7 +80,9 @@ function AddCardForm({ onAddCard }) {
 
       <br />
 
-      <button type="submit">Add Card</button>
+      <button
+       className={styles.button}
+       type="submit">Add Card</button>
 
     </form>
   );

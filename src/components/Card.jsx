@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "./Card.module.css";
 function Card({
   card,
   updateCard,
@@ -68,12 +68,13 @@ function Card({
   }
 
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h3>{card.title}</h3>
 
       <p>{card.description}</p>
 
       <button
+      className={styles.button}
         onClick={() => setIsEditing(true)}
       >
         Edit

@@ -1,0 +1,109 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: aquamarine; */
+}
+
+/* body {
+  font-family: Arial, sans-serif;
+}
+
+.dark{
+background:#333;
+color:white;
+}
+
+.light{
+background:white;
+color:black;
+} */
+
+/* .dark .card{
+  background:#374151;
+  color:white;
+}
+
+.dark .column{
+  background:#2d3748;
+} */
+
+/* .dark input,
+.dark textarea,
+.dark select{
+  background:#374151;
+  color:white;
+  border:1px solid #555;
+}
+
+.dark .form{
+  background:#2d3748;
+} */ */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.light {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #222;
+  transition: 0.3s;
+}
+
+.dark {
+  min-height: 100vh;
+  background: #1f2937;
+  color: white;
+  transition: 0.3s;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* ---------- Light Theme ---------- */
+
+.light {
+  --background: #f4f7fb;
+  --surface: #ffffff;
+  --column: #e9eef7;
+  --text: #222;
+  --secondary-text: #555;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border: #ccc;
+
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* ---------- Dark Theme ---------- */
+
+.dark {
+  --background: #111827;
+  --surface: #1f2937;
+  --column: #374151;
+  --text: #f9fafb;
+  --secondary-text: #d1d5db;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --border: #555;
+
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}

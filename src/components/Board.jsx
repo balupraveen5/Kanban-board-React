@@ -1,4 +1,5 @@
 import Column from "./Column";
+import styles from "./Board.module.css";
 
 function Board({ cards, updateCard, deleteCard,moveCard }) {
 
@@ -18,7 +19,7 @@ function Board({ cards, updateCard, deleteCard,moveCard }) {
   ];
 
   return (
-    <>
+    <div className={styles.board}>
       {columns.map((column) => (
 
         <Column
@@ -35,7 +36,7 @@ function Board({ cards, updateCard, deleteCard,moveCard }) {
         />
 
       ))}
-    </>
+    </div>
   );
 }
 

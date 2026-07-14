@@ -1,9 +1,9 @@
 import Card from "./Card";
-
+import styles from "./Column.module.css"
 function Column({ title, cards,updateCard,deleteCard,moveCard}) {
   return (
-    <section>
-      <h2>{title}</h2>
+    <section className={styles.column}>
+      <h2 className={styles.title}>{title}</h2>
 
       {cards.map((card) => (
         <Card

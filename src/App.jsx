@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "./App.css"
 import Header from './components/Header';
 import Board from './components/Board';
 import AddCardForm from './AddCardForm';
@@ -34,7 +35,6 @@ function App() {
     },
 
   ]
-console.log(crypto.randomUUID);
   const[cards,setCards]=useLocalStorage("cards",initialCards);
 
   function addCard(newCard){
@@ -87,7 +87,7 @@ const { theme }= useTheme();
 
   return (
      <div className={theme}>
-     <h1>Kanban-board</h1>
+     {/* <h1>Kanban-board</h1> */}
      <Header />
      <AddCardForm onAddCard={addCard} />
      <Board cards={cards} updateCard={updateCard}

@@ -1,0 +1,21 @@
+.board {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 25px;
+
+  align-items: stretch;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.board{
+
+flex-direction:column;
+
+}
+
+}

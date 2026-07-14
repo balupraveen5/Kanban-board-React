@@ -1,4 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
+import styles from "./Header.module.css"
 
 function Header() {
   const { theme, setTheme } = useTheme();
@@ -8,10 +9,12 @@ function Header() {
   }
 
   return (
-    <header>
-      <h1>Kanban Board</h1>
+    <header className={styles.header}>
+      <h1 className={styles.title}>Kanban Board</h1>
 
-      <button onClick={toggleTheme}>
+      <button 
+      className={styles.button}
+      onClick={toggleTheme}>
         {theme === "light"
           ? "Dark Mode"
           : "Light Mode"}
