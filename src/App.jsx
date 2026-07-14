@@ -3,10 +3,11 @@ import Header from './components/Header';
 import Board from './components/Board';
 import AddCardForm from './AddCardForm';
 import { useTheme } from './context/ThemeContext';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
   
-  const[cards,setCards]=useState([
+  const initialCards = [
         {
       id: crypto.randomUUID(),
       title: "Learn React",
@@ -32,7 +33,9 @@ function App() {
       column: "done",
     },
 
-  ])
+  ]
+console.log(crypto.randomUUID);
+  const[cards,setCards]=useLocalStorage("cards",initialCards);
 
   function addCard(newCard){
     setCards(prev => [...prev,newCard])
@@ -52,7 +55,7 @@ function deleteCard(id) {
   );
 }
 
-  function moveCard(id, direction) {
+function moveCard(id, direction) {
   const columns = ["todo", "doing", "done"];
 
   setCards((prevCards) =>

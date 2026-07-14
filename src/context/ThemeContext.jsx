@@ -1,9 +1,11 @@
 import { createContext, useContext, useState } from "react";
-
+import useLocalStorage from "../hooks/useLocalStorage";
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useLocalStorage("theme",
+    "light"
+  );
 
   return (
     <ThemeContext.Provider
@@ -14,7 +16,7 @@ export function ThemeProvider({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export function useTheme() {
   return useContext(ThemeContext);
 }
