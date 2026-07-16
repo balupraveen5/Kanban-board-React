@@ -1,11 +1,15 @@
 import { useState } from "react";
 import styles from "./AddCardForm.module.css"
+
 function AddCardForm({ onAddCard }) {
+  // console.log("Rendering");
+  // let title1="";
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [column, setColumn] = useState("todo");
   const [error, setError] = useState("");
 
+  
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -16,7 +20,7 @@ function AddCardForm({ onAddCard }) {
 
     const newCard = {
       id: crypto.randomUUID(),
-      title,
+      title: title,
       description,
       column,
     };
@@ -42,8 +46,9 @@ function AddCardForm({ onAddCard }) {
         <input
           className={styles.input}
           type="text"
-          value={title}
+          // value={title}
           onChange={(e) => {
+            // title1=e.target.value;
             setTitle(e.target.value);
             setError("");
           }}
@@ -75,6 +80,7 @@ function AddCardForm({ onAddCard }) {
           <option value="todo">Todo</option>
           <option value="doing">Doing</option>
           <option value="done">Done</option>
+          <option value="done">Deploy</option>
         </select>
       </div>
 

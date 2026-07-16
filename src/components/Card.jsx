@@ -38,6 +38,7 @@ function Card({
     return (
       <div className="card">
         <input
+        className={styles.input}
           type="text"
           value={title}
           onChange={(e) =>
@@ -56,11 +57,17 @@ function Card({
 
         <br />
 
-        <button onClick={handleSave}>
+        <button 
+              className={styles.button}
+
+        onClick={handleSave}>
           Save
         </button>
 
-        <button onClick={handleCancel}>
+        <button 
+              className={styles.button}
+
+        onClick={handleCancel}>
           Cancel
         </button>
       </div>
@@ -72,7 +79,7 @@ function Card({
       <h3>{card.title}</h3>
 
       <p>{card.description}</p>
-
+  <div className={styles.actions}>
       <button
       className={styles.button}
         onClick={() => setIsEditing(true)}
@@ -81,6 +88,7 @@ function Card({
       </button>
 
       <button
+      className={styles.button}
         onClick={() =>
           deleteCard(card.id)
         }
@@ -88,18 +96,23 @@ function Card({
         Delete
       </button>
 
-        {card.column !== "todo" && (
-    <button onClick={() => moveCard(card.id, "previous")}>
+   {card.column !== "todo" && (
+    <button 
+    className={styles.button}
+     onClick={() => moveCard(card.id, "previous")}>
       ⬅ Previous
     </button>
   )}
 
-  {card.column !== "done" && (
-    <button onClick={() => moveCard(card.id, "next")}>
+  {card.column !== "deploy" && (
+    <button 
+    className={styles.button}
+    onClick={() => moveCard(card.id, "next")}>
       Next ➡
     </button>
 
   )}
+  </div>
 
     </div>
   );

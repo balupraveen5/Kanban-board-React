@@ -1,22 +1,9 @@
 import Column from "./Column";
 import styles from "./Board.module.css";
 
-function Board({ cards, updateCard, deleteCard,moveCard }) {
+function Board({ cards, updateCard, deleteCard,moveCard,columns }) {
 
-  const columns = [
-    {
-      id: "todo",
-      title: "Todo",
-    },
-    {
-      id: "doing",
-      title: "Doing",
-    },
-    {
-      id: "done",
-      title: "Done",
-    },
-  ];
+  // console.log(columns)
 
   return (
     <div className={styles.board}>

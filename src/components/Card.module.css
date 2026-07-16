@@ -1,7 +1,7 @@
 .card {
   background: var(--surface);
 
-  padding: 15px;
+  padding: 20px;
 
   border-radius: 10px;
 
@@ -26,54 +26,55 @@ margin-bottom:10px;
 
 .card p {
   color: var(--secondary-text);
+  margin-bottom: 10px;;
 }
 
-.buttons{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:8px;
-
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
 }
 
-.buttons button{
-
-padding:8px 12px;
-
-border:none;
-
-border-radius:6px;
-
-cursor:pointer;
-
-background: var(--primary);
-
-color:white;
-
-transition:.3s;
-
+.button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  transition: background 0.3s;
+  margin-bottom: 10px;
 }
 
-.buttons button:hover{
-
-background: var(--primary-hover);
-
+.button:hover {
+  background: var(--primary-hover);
 }
+
+.input{
+    padding:10px;
+    padding-left: 0;
+    height: 20px;;
+}
+
+.textarea{
+    margin-bottom: 10px;
+}
+
+
 
 @media (max-width:768px){
 
 .buttons{
 
 flex-direction:column;
-
+  
 }
 
-.buttons button{
+/* .buttons button{
 
 width:100%;
 
-}
+} */
 
 }

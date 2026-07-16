@@ -35,6 +35,25 @@ function App() {
     },
 
   ]
+
+  const columns = [
+    {
+      id: "todo",
+      title: "Todo",
+    },
+    {
+      id: "doing",
+      title: "Doing",
+    },
+    {
+      id: "done",
+      title: "Done",
+    },
+    {
+      id:"deploy",
+      title:"deploy"
+    }
+  ];
   const[cards,setCards]=useLocalStorage("cards",initialCards);
 
   function addCard(newCard){
@@ -49,14 +68,22 @@ function App() {
   );
  }
 
+ 
 function deleteCard(id) {
+  alert("are you sure")
   setCards((prevCards) =>
     prevCards.filter((card) => card.id !== id)
   );
 }
 
+const col= columns.map((c)=>{
+  // if(c.id==="done")
+  return c.id;
+})
+console.log(col);
+
 function moveCard(id, direction) {
-  const columns = ["todo", "doing", "done"];
+
 
   setCards((prevCards) =>
     prevCards.map((card) => {
@@ -64,7 +91,8 @@ function moveCard(id, direction) {
         return card;
       }
 
-      const currentIndex = columns.indexOf(card.column);
+      const currentIndex = col.indexOf(card.column);
+      console.log("curr->"+currentIndex)
 
       let newIndex = currentIndex;
 
@@ -78,7 +106,7 @@ function moveCard(id, direction) {
 
       return {
         ...card,
-        column: columns[newIndex],
+        column: col[newIndex],
       };
     })
   );
@@ -92,7 +120,8 @@ const { theme }= useTheme();
      <AddCardForm onAddCard={addCard} />
      <Board cards={cards} updateCard={updateCard}
      deleteCard={deleteCard}
-     moveCard={moveCard}/>
+     moveCard={moveCard}
+     columns={columns}/>
     </div>
   );
 }

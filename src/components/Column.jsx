@@ -8,8 +8,6 @@ function Column({ title, cards,updateCard,deleteCard,moveCard}) {
       {cards.map((card) => (
         <Card
           key={card.id}
-          // title={card.title}
-          // description={card.description}
           card={card}
           updateCard={updateCard}
           deleteCard={deleteCard}
